@@ -13,15 +13,19 @@ var path = require('path')
 var webpack = require('webpack')
 var bundleTracker = require('webpack-bundle-tracker')
 
+var IN = '../src/mobile'
+var OUT = '../dist/bundles'
+var NAME = '[name]-[hash].js'
+
 module.exports = {
 	// base dir for resolving entry option
 	context: __dirname,
 	// the entry point we created earlier
-	entry: { order: '../src/mobile', },
+	entry: { order: IN, },
 	
 	output: {
-		path: path.resolve('../../assets/bundles/'),
-		filename: '[name]-[hash].js',
+		path: path.resolve(OUT),
+		filename: NAME,
 	},
 	
 	plugins: [

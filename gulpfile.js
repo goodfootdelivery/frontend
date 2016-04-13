@@ -12,13 +12,13 @@ var webpack = require('webpack-stream')
 var plug = gulpLoadPlugins();
 
 // Source Variables
-var MOBILE = './src/mobile'
-var BROWSER = './src/browser'
-var SASS = './src/sass/*.scss'
+var MOBILE = 'src/mobile'
+var BROWSER = 'src/browser'
+var SASS = 'src/sass/*.scss'
 // Dest. Variables
-var BUNDLES = './dist/bundles'
-var SCRIPTS = './dist/js'
-var STYLE = './dist/css'
+var BUNDLES = 'dist/bundles'
+var SCRIPTS = 'dist/scripts'
+var STYLE = 'dist/stylesheets'
 
 // pack mobile app
 gulp.task('mobile', function(){
@@ -26,7 +26,6 @@ gulp.task('mobile', function(){
 	.pipe(webpack(
 		require('./webpack/webpack.config.mobile.js')
 	))
-	.pipe(gulp.dest(BUNDLES))
 })
  
 // pack jquery app
@@ -35,7 +34,6 @@ gulp.task('browser', function(){
 	.pipe(webpack(
 		require('./webpack/webpack.config.browser.js')
 	))
-	.pipe(gulp.dest(SCRIPTS))
 })
 /*
  * Compile & File Sass
